@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Followers" icon-name="standard:groups">
+        <lightning-button-icon slot="actions" icon-name="utility:rotate" onclick={handleRefresh} title="Refresh Followers"></lightning-button-icon>
+        <template if:true={followersExist}>
+            <p slot="footer">Total Followers ({listSize})</p>
+            <lightning-layout>
+                <template for:each={followers.data} for:item="follower">
+                    <lightning-layout-item key={follower.Id} class="slds-m-around_small">
+                        <c-followers-card-item follower={follower}></c-followers-card-item>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+</template>

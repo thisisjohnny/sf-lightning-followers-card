@@ -1,0 +1,14 @@
+<template>
+    <template if:true={follower}>
+        <lightning-avatar
+            class="pointer"
+            variant="circle"
+            src={imageUrl}
+            initials={followerInitials}
+            fallback-icon-name="standard:person_account"
+            alternative-text={follower.Name}
+            size="large"
+            onclick={navigateToUser}>
+        </lightning-avatar>
+    </template>
+</template>
